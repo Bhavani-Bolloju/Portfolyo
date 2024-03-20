@@ -1,28 +1,42 @@
 :root {
 
   //COLORS
-
-
   --color-white: #fff;
   --color-black: #000;
   --color-accent: #d1701f;
 
 
   --color-gray-1: #767676;
-  --color-gray-1: #999;
-  --color-gray-1: #f9f9f9; //hero section
-  --color-gray-1: #ddd; //portfolio list
-  --color-gray-1: #7E7E7E;
-  --color-gray-1: #888;
+  --color-gray-2: #7E7E7E;
+  --color-gray-3: #888;
+  --color-gray-4: #999;
+  --color-gray-5: #ddd; //portfolio list
+  --color-gray-6: #f9f9f9; //hero section
 
   --color-error:#F52225;
 	--color-request:#3A00FF;
  
-
+  //FONT-FAMILY
   --font-body: "Mulish", sans-serif;
   --font-header: "Poppins", sans-serif;
   //poppins - 600, 500, 900, 700, 800, 400,  
   //mulish - 400
+
+  //SIZES
+ --font-size-regular:1.6rem;
+ --font-size-semi-md: 2rem; 
+ --font-size-md: 2.4rem; 
+ --font-size-semi-lg: 3rem; 
+ --font-size-lg: 3.6rem; 
+ --font-size-xl: 4.5rem; 
+  //WEIGHTS
+
+  --font-weight-regular: 400;
+  --font-weight-md: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
 
 }
 
@@ -53,7 +67,15 @@ html{
 }
 
 body {
-  font-size: 1.6rem;
-  font-family: var(--font-body);
+  font-family: "Mulish";
+	font-size: 1.6rem;
+	line-height: 30px;
+	letter-spacing: 0.5px;
+	word-wrap: break-word;
+	font-weight: 400;
+	background-color: var(--color-white);
+	color: var(--color-gray-1);
+	overflow-x: hidden;
+	width: 100%;
 }
 
