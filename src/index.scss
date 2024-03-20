@@ -1,7 +1,46 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  //COLORS
+
+
+  --color-white: #fff;
+  --color-black: #000;
+  --color-accent: #d1701f;
+
+
+  --color-gray-1: #767676;
+  --color-gray-1: #999;
+  --color-gray-1: #f9f9f9; //hero section
+  --color-gray-1: #ddd; //portfolio list
+  --color-gray-1: #7E7E7E;
+  --color-gray-1: #888;
+
+  --color-error:#F52225;
+	--color-request:#3A00FF;
+ 
+
+  --font-body: "Mulish", sans-serif;
+  --font-header: "Poppins", sans-serif;
+  //poppins - 600, 500, 900, 700, 800, 400,  
+  //mulish - 400
 
 }
+
+// 01)	RYKER BASE
+// 02) RYKER TOPBAR
+// 03) RYKER MOBILE MENU
+// 04) RYKER HERO
+// 05) RYKER ABOUT
+// 06) RYKER SERVICES
+// 07) RYKER PORTFOLIO
+// 08) RYKER VIDEO
+// 09) RYKER TESTIMONIALS
+// 10) RYKER NEWS
+// 11) RYKER CONTACT
+// 12) RYKER COPYRIGHT
+// 13) RYKER MAGIC CURSOR
+// 14) RYKER MEDIA QUERIES (FOR SMALL DEVIVES)
+
 
 *,*::before, *::after{
   margin: 0;
@@ -15,6 +54,6 @@ html{
 
 body {
   font-size: 1.6rem;
-
+  font-family: var(--font-body);
 }
 
