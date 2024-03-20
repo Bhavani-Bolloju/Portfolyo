@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import classes from "./Header.module.scss";
 import logo from "../../assets/img/logo/dark.png";
+import audio1 from "../../assets/audio/1.mp3";
+import audio2 from "../../assets/audio/2.mp3";
 
 function Header() {
   const [isopen, setIsopen] = useState(false);
+  const audioRef1 = useRef();
+  const audioRef2 = useRef();
 
   const handleHamburger = function () {
     setIsopen((prev) => !prev);
+
+    if (isopen) {
+      audioRef1.current.play();
+    } else {
+      audioRef2.current.play();
+    }
   };
 
   const hamburgerClass = isopen
@@ -45,7 +55,10 @@ function Header() {
             </li>
           </ul>
         </nav>
+
         <button onClick={handleHamburger} className={classes.hamburger}>
+          <audio ref={audioRef1} src={audio1}></audio>
+          <audio ref={audioRef2} src={audio2}></audio>
           <div className={hamburgerClass}></div>
         </button>
       </div>
