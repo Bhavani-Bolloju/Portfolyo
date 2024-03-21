@@ -1,0 +1,192 @@
+.about {
+  width: 100%;
+  height: auto;
+  padding: 15rem 0px 17.5rem 0px;
+  &__container {
+    width: 100%;
+    margin: auto;
+
+    @media screen and (max-width: 160rem) {
+      max-width: 100rem;
+    }
+  }
+  &__inner {
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+  &__left {
+    width: 50%;
+    margin-right: 50px;
+  }
+  &__right {
+    width: 50%;
+    margin-left: 50px;
+  }
+  &__image {
+    position: relative;
+
+    img {
+      position: relative;
+      min-width: 100%;
+      opacity: 0;
+    }
+  }
+  &__main {
+    background: url("../../assets/img/about/2.jpg");
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+  }
+  &__experience {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background-color: #fff;
+    bottom: -40px;
+    right: -40px;
+    z-index: 1;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  &__year {
+    background: url("../../assets/img/about/2.jpg");
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7.2rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: experience 25s linear infinite;
+    font-family: var(--font-header);
+  }
+  &__title {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    clear: both;
+    float: left;
+    span {
+      font-family: "Poppins";
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #d1701f;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-weight: 700;
+    }
+  }
+  &__text {
+    width: 100%;
+    padding-top: 30px;
+    margin-bottom: 35px;
+  }
+  &__signature {
+    width: 100%;
+    margin-bottom: 40px;
+
+    img {
+      max-width: 250px;
+    }
+  }
+  &__button {
+  }
+}
+
+@keyframes experience {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -1000px;
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+
+  text {
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: currentColor;
+  }
+
+  svg {
+    position: absolute;
+    left: -90px;
+    top: -90px;
+    width: 400px;
+    height: 400px;
+    fill: var(--color-black);
+
+    -webkit-animation: rotate 25s linear infinite;
+    -moz-animation: rotate 25s linear infinite;
+    -ms-animation: rotate 25s linear infinite;
+    -o-animation: rotate 25s linear infinite;
+    animation: rotate 25s linear infinite;
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0);
+  }
+}
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(360deg);
+  }
+  to {
+    -moz-transform: rotate(0);
+  }
+}
+@-ms-keyframes rotate {
+  from {
+    -ms-transform: rotate(360deg);
+  }
+  to {
+    -ms-transform: rotate(0);
+  }
+}
+@-o-keyframes rotate {
+  from {
+    -o-transform: rotate(360deg);
+  }
+  to {
+    -o-transform: rotate(0);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
