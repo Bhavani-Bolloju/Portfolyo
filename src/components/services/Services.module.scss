@@ -1,0 +1,118 @@
+.services {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  background-color: #f9f9f9;
+  padding: 140px 0px 103px 0px;
+  &__container {
+  }
+  &__inner {
+    width: 100%;
+    height: auto;
+    clear: both;
+    display: flex;
+  }
+  &__left {
+    width: 50%;
+    margin-right: 50px;
+  }
+  &__title {
+    span {
+    }
+    h3 {
+    }
+  }
+
+  &__text {
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 37px;
+  }
+  &__progress {
+    width: 100%;
+    height: auto;
+    clear: both;
+    float: left;
+    &-inner {
+      width: 100%;
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+    &-label {
+      margin: 0px 0px 5px 0px;
+      width: 100%;
+      display: block;
+      text-align: left;
+      color: #000;
+      font-family: "Poppins";
+    }
+    &-number {
+      float: right;
+    }
+    &-background {
+      background: rgba(0, 0, 0, 0.09);
+      width: 100%;
+      min-width: 100%;
+      position: relative;
+      height: 7px;
+      border-radius: 50px;
+    }
+    &-bar {
+      width: 0px;
+      height: 100%;
+    }
+    &-bar-in {
+      height: 100%;
+      background: #d1701f;
+      width: 0px;
+      overflow: hidden;
+      border-radius: 50px;
+    }
+  }
+
+  &__right {
+    width: 50%;
+    margin-left: 50px;
+  }
+  &__grid {
+    margin: 0px 0px 0px -50px;
+    list-style-type: none;
+  }
+  &__grid-item {
+    margin: 0px 0px 50px 0px;
+    width: 50%;
+    float: left;
+    padding-left: 50px;
+    position: relative;
+
+    &:nth-child(1) {
+      margin-top: 50px;
+    }
+  }
+  &__grid__list-inner {
+    width: 100%;
+    height: auto;
+    clear: both;
+    float: left;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 55px 40px;
+    border-radius: 10px;
+    img {
+      width: 50px;
+      height: 50px;
+      color: #d1701f;
+      margin-bottom: 30px;
+      display: block;
+    }
+    h3 {
+      font-size: 20px;
+    }
+  }
+}

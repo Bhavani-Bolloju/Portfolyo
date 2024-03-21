@@ -114,12 +114,12 @@
     width: fit-content;
     border-radius: 5rem;
     background-color: var(--color-accent);
+    transition: all 0.1s;
     a {
       display: inline-block;
       color: var(--color-white);
       text-decoration: none;
       font-family: var(--font-header);
-      transition: all 0.1s;
     }
 
     &:hover {
