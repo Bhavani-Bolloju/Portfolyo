@@ -2,6 +2,7 @@
 
 import classes from "./About.module.scss";
 import thumbs from "../../assets/img/thumbs/1-1.jpg";
+import signature from "../../assets/img/signature.png";
 
 function About() {
   return (
@@ -23,35 +24,6 @@ function About() {
                   7
                 </h3>
                 <div className={classes.circle}>
-                  {/* <svg
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    width="300px"
-                    height="300px"
-                    viewBox="0 0 300 300"
-                    enableBackground="new 0 0 300 300"
-                    xmlSpace="preserve"
-                  >
-                    <defs>
-                      <path
-                        id="circlePath"
-                        d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
-                      />
-                    </defs>
-                    <circle cx="150" cy="100" r="75" fill="none" />
-                    <g>
-                      <use xlinkHref="#circlePath" fill="none" />
-                      <text>
-                        <textpath xlinkHref="#circlePath">
-                          Years of best and successful work experience
-                        </textpath>
-                      </text>
-                    </g>
-                  </svg> */}
-
                   <svg
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +73,7 @@ function About() {
               </p>
             </div>
             <div className={classes["about__signature"]}>
-              <img src="img/signature.png" alt="" />
+              <img src={signature} alt="" />
             </div>
             <div className={classes["about__button"]}>
               <a href="#">Download CV</a>
