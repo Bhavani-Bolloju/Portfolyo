@@ -34,7 +34,10 @@ function Services() {
                   </span>
                 </span>
                 <div className={classes["services__progress-background"]}>
-                  <div className={classes["services__progress-bar"]}>
+                  <div
+                    className={classes["services__progress-bar"]}
+                    style={{ width: "90%" }}
+                  >
                     <div className={classes["services__progress-bar-in"]}></div>
                   </div>
                 </div>
@@ -52,14 +55,17 @@ function Services() {
                   </span>
                 </span>
                 <div className={classes["services__progress-background"]}>
-                  <div className={classes["services__progress-bar"]}>
+                  <div
+                    className={classes["services__progress-bar"]}
+                    style={{ width: "80%" }}
+                  >
                     <div className={classes["services__progress-bar-in"]}></div>
                   </div>
                 </div>
               </div>
               <div
                 className={classes["services__progress-inner"]}
-                data-value="85"
+                data-value="90"
               >
                 <span>
                   <span className={classes["services__progress-label"]}>
@@ -70,7 +76,10 @@ function Services() {
                   </span>
                 </span>
                 <div className={classes["services__progress-background"]}>
-                  <div className={classes["services__progress-bar"]}>
+                  <div
+                    className={classes["services__progress-bar"]}
+                    style={{ width: "90%" }}
+                  >
                     <div className={classes["services__progress-bar-in"]}></div>
                   </div>
                 </div>
