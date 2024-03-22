@@ -26,7 +26,7 @@ const VideoOverlay = ({ onClose, link }) => {
           className={classes["video-frame"]}
           width="100%"
           height="100%"
-          src="https://www.youtube.com/embed/VIDEO_ID"
+          src={link}
           title="YouTube video player"
           allowFullScreen
         ></iframe>
@@ -36,7 +36,7 @@ const VideoOverlay = ({ onClose, link }) => {
 };
 
 function Video() {
-  const [showOverlay, setShowOverlay] = useState(true);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   const openOverlay = () => {
     setShowOverlay(true);
