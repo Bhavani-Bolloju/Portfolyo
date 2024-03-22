@@ -53,9 +53,7 @@ function Video() {
           className={classes["video__image"]}
           data-speed="0"
           data-img-url="img/hero/1.jpg"
-        >
-          {/* <img src="" alt="" /> */}
-        </div>
+        ></div>
       </div>
       <div className={classes["video__content"]}>
         <div className={classes["video__container"]}>

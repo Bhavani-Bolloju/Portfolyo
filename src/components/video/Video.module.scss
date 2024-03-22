@@ -1,42 +1,20 @@
 .video {
   width: 100%;
-  height: auto;
-  clear: both;
-  float: left;
-  position: relative;
+
   background-color: var(--color-black);
-  &__background {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-  }
-  &__image {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
 
   &__content {
     width: 100%;
     height: auto;
-    clear: both;
-    float: left;
+
     position: relative;
-    // z-index: 2;
+    z-index: 2;
     padding: 160px 0px 150px 0px;
+    background-color: black;
 
     &_inner {
       width: 100%;
       height: auto;
-      clear: both;
-      float: left;
       text-align: center;
     }
   }
@@ -96,15 +74,6 @@
         right: -20px;
       }
     }
-
-    a {
-      position: absolute;
-      top: 0px;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      //   z-index: 1;
-    }
   }
 
   &__text {
@@ -127,7 +96,7 @@
     text-decoration: none;
     border-radius: 5rem;
     display: inline-block;
-    transition: all 0.1s;
+    transition: all 0.3s;
 
     &:hover {
       background-color: transparent;

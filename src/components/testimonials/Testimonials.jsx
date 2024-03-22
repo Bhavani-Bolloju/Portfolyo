@@ -1,26 +1,77 @@
-// import React from 'react'
 import classes from "./Testimonials.module.scss";
-// starts
-import star from "../../assets/img/svg/star.svg";
-//about image 1,2,3
 import user1 from "../../assets/img/about/1.jpg";
 import user2 from "../../assets/img/about/2.jpg";
 import user3 from "../../assets/img/about/3.jpg";
-//svg quote
-import quote from "../../assets/img/svg/quote.svg";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+
+import "@splidejs/react-splide/css";
 
 function Testimonials() {
   return (
     <section className={classes.testimonial}>
       <div className={classes["testimonial__container"]}>
         <div className={classes["testimonial__title"]}>
-          <span>Testimonials</span>
-          <span>Testimonials</span>
+          <div className={classes["testimonial__title-slider"]}>
+            <div className={classes["testimonial__title-slide"]}>
+              testimonial
+            </div>
+            <div className={classes["testimonial__title-slide"]}>
+              testimonial
+            </div>
+            <div className={classes["testimonial__title-slide"]}>
+              testimonial
+            </div>
+            <div className={classes["testimonial__title-slide"]}>
+              testimonial
+            </div>
+            <div className={classes["testimonial__title-slide"]}>
+              testimonial
+            </div>
+          </div>
+          {/* <Splide>
+            <SplideSlide>
+              <span>Testimonials</span>
+            </SplideSlide>
+            <SplideSlide>
+              <span>Testimonials</span>
+            </SplideSlide>
+            <SplideSlide>
+              <span>Testimonials</span>
+            </SplideSlide>
+            <SplideSlide>
+              <span>Testimonials</span>
+            </SplideSlide>
+            <SplideSlide>
+              <span>Testimonials</span>
+            </SplideSlide>
+            <SplideSlide>
+              <span>Testimonials</span>
+            </SplideSlide>
+            <SplideSlide>
+              <span>Testimonials</span>
+            </SplideSlide>
+          </Splide> */}
         </div>
         <div className={classes["testimonial__content"]}>
           <div className={classes["testimonial__list"]}>
             <div className={classes["testimonial__wrapper"]}>
               {/* user 1 */}
+              {/* <Splide
+                hasTrack={true}
+                options={{
+                  perPage: 1,
+                  arrows: false,
+                  pagination: false,
+                  rewind: true,
+                  autoplay: true,
+                  speed: 10000,
+                  interval: 5000,
+                  drag: false,
+                  pauseOnHover: false,
+                  pauseOnFocus: false,
+                  loop: true,
+                }}
+              ></Splide> */}
               <div className={classes["testimonial__item"]}>
                 <ul className={classes["testimonial__stars"]}>
                   <li>

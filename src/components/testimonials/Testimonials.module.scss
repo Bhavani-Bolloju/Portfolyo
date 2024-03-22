@@ -3,10 +3,30 @@
   height: auto;
   margin-bottom: 150px;
   &__container {
+    margin-top: 5rem;
   }
   &__title {
     width: 100%;
     margin: 198px 0px 129px 0px;
+    overflow: hidden;
+    &-slider {
+      display: flex;
+      gap: 20rem;
+      animation: slideLoop 100s linear infinite;
+    }
+    &-slide {
+      font-family: var(--font-header);
+      font-size: 18rem;
+      font-weight: 800;
+      color: var(--color-gray-5);
+      opacity: 0.5;
+      display: block;
+      text-wrap: nowrap;
+      width: 100%;
+      padding: 7rem 2rem;
+      text-transform: capitalize;
+      // border: 1px solid #ccc;
+    }
   }
   &__content {
   }
@@ -127,5 +147,23 @@
         height: 18px;
       }
     }
+  }
+}
+
+@keyframes slideLoop {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
