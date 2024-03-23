@@ -40,7 +40,7 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(userInfo);
+  console.log(userInfo.data);
 
   return (
     <div>
@@ -63,7 +63,12 @@ function App() {
           experience={userInfo.data.about["exp_year"]}
         />
       )}
-      {userInfo.data && <Services skills={userInfo.data.skills} />}
+      {userInfo.data && (
+        <Services
+          skills={userInfo.data.skills.slice(0, 3)}
+          services={userInfo.data.services.slice(0, 4)}
+        />
+      )}
       <Portfolio />
       <Video />
       <Testimonials />
