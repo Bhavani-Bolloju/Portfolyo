@@ -43,8 +43,9 @@ function Header() {
                 to="home"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={0}
                 duration={800}
+                activeClass={classes.active}
               >
                 home
               </Link>
@@ -57,6 +58,7 @@ function Header() {
                 smooth={true}
                 offset={50}
                 duration={800}
+                activeClass={classes.active}
               >
                 about
               </Link>
@@ -69,6 +71,7 @@ function Header() {
                 smooth={true}
                 offset={50}
                 duration={800}
+                activeClass={classes.active}
               >
                 services
               </Link>
@@ -81,6 +84,7 @@ function Header() {
                 smooth={true}
                 offset={50}
                 duration={800}
+                activeClass={classes.active}
               >
                 portfolio
               </Link>
@@ -93,6 +97,7 @@ function Header() {
                 smooth={true}
                 offset={50}
                 duration={800}
+                activeClass={classes.active}
               >
                 news
               </Link>
@@ -105,6 +110,7 @@ function Header() {
                 smooth={true}
                 offset={50}
                 duration={800}
+                activeClass={classes.active}
               >
                 contact
               </Link>

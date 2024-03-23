@@ -63,13 +63,17 @@
   &__item {
     list-style: none;
     transform: translateX(20px);
-  }
 
-  a {
-    text-decoration: none;
-    text-transform: capitalize;
-    color: #000;
-    font-family: "Poppins";
+    a {
+      text-decoration: none;
+      text-transform: capitalize;
+      color: #000;
+      font-family: "Poppins";
+
+      &.active {
+        color: var(--color-accent);
+      }
+    }
   }
 }
 
