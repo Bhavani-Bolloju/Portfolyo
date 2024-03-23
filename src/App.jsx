@@ -73,7 +73,9 @@ function App() {
         <Portfolio projects={userInfo.data.projects.slice(0, 6)} />
       )}
       <Video />
-      <Testimonials />
+      {userInfo.data && (
+        <Testimonials testimonials={userInfo.data.testimonials} />
+      )}
       <News />
       <Contact />
       <Copyrights />

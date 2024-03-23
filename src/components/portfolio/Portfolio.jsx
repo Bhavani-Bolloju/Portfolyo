@@ -42,7 +42,6 @@ const ProjectItem = function ({ onOpen, imageUrl, title }) {
 };
 
 function Portfolio({ projects }) {
-  console.log(projects);
   const [isopen, setIsopen] = useState(false);
 
   const hiddenPortfolioClass = isopen
