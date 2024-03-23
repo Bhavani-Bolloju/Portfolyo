@@ -1,0 +1,47 @@
+.copyrights {
+  width: 100%;
+  height: auto;
+  background-color: #d1701f;
+  padding: 80px 0px;
+  &__container {
+    width: 100%;
+    margin: auto;
+
+    @media screen and (max-width: 160rem) {
+      max-width: 100rem;
+    }
+  }
+  &__inner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
+  &__text {
+    p {
+      color: #fff;
+      font-family: "Poppins";
+    }
+  }
+  &__socials {
+    ul {
+      margin: 0px;
+      list-style-type: none;
+      li {
+        margin: 0px 20px 0px 0px;
+        display: inline-block;
+        a {
+          text-decoration: none;
+          color: #fff;
+          display: block;
+        }
+      }
+    }
+  }
+  .svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--color-white);
+  }
+}
