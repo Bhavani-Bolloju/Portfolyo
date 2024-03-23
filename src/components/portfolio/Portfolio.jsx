@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import classes from "./Portfolio.module.scss";
 import thumbs from "../../assets/img/thumbs/1-1.jpg";
 import thumbs2 from "../../assets/img/thumbs/4-2.jpg";
 import portfolio6 from "../../assets/img/portfolio/6.jpg";
@@ -13,6 +12,7 @@ import instagram from "../../assets/img/svg/social/instagram.svg";
 import twitter from "../../assets/img/svg/social/twitter.svg";
 import dribble from "../../assets/img/svg/social/dribble.svg";
 import tiktok from "../../assets/img/svg/social/tik-tok.svg";
+import classes from "./Portfolio.module.scss";
 
 function Portfolio() {
   const [isopen, setIsopen] = useState(false);
