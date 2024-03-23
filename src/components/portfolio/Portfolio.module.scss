@@ -67,7 +67,7 @@
       }
     }
     &-main {
-      background: url("../../assets/img/portfolio/1.jpg");
+      // background: url("../../assets/img/portfolio/1.jpg");
       position: absolute;
       top: 0px;
       bottom: 0px;
@@ -75,8 +75,20 @@
       right: 0px;
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover;
-      border-radius: 10px;
+      background-size: 100%;
+
+      border-radius: 1rem;
+      // overflow: hidden;
+
+      img {
+        width: 100%;
+        border-radius: 1rem;
+        height: 100%;
+        position: absolute;
+        opacity: 1;
+        object-fit: cover;
+        display: block;
+      }
 
       &::before {
         background-color: #000;

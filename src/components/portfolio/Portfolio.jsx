@@ -14,7 +14,35 @@ import dribble from "../../assets/img/svg/social/dribble.svg";
 import tiktok from "../../assets/img/svg/social/tik-tok.svg";
 import classes from "./Portfolio.module.scss";
 
-function Portfolio() {
+const ProjectItem = function ({ onOpen, imageUrl, title }) {
+  return (
+    <li
+      onClick={onOpen}
+      className={classes["project__item"]}
+      data-wow-duration="1.5s"
+    >
+      <div className={classes["project__item-inner"]}>
+        <div className={classes["project__item-image"]}>
+          <img src={thumbs} alt="thumbnail" />
+          <div
+            className={classes["project__item-main"]}
+            data-img-url="img/portfolio/1.jpg"
+          >
+            <img src={imageUrl} alt="" />
+          </div>
+        </div>
+        <div className={classes["project__item-overlay"]}></div>
+        <div className={classes["project__item-details"]}>
+          <h3>{title}</h3>
+          {/* <span>Vimeo</span> */}
+        </div>
+      </div>
+    </li>
+  );
+};
+
+function Portfolio({ projects }) {
+  console.log(projects);
   const [isopen, setIsopen] = useState(false);
 
   const hiddenPortfolioClass = isopen
@@ -31,7 +59,7 @@ function Portfolio() {
           </div>
           <div className={classes["project__list"]}>
             <ul className={classes["gallery_zoom"]}>
-              <li
+              {/* <li
                 onClick={() => setIsopen(true)}
                 className={classes["project__item"]}
                 data-wow-duration="1.5s"
@@ -144,7 +172,14 @@ function Portfolio() {
                   </div>
                   <a className={classes["project__item-link"]} href="#"></a>
                 </div>
-              </li>
+              </li> */}
+              {projects.map((project) => (
+                <ProjectItem
+                  key={project["_id"]}
+                  imageUrl={project.image.url}
+                  title={project.title}
+                />
+              ))}
             </ul>
           </div>
         </div>
