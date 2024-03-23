@@ -40,7 +40,7 @@ function App() {
     fetchData();
   }, []);
 
-  // console.log(userInfo);
+  console.log(userInfo);
 
   return (
     <div>
@@ -54,8 +54,16 @@ function App() {
           skills={userInfo.data.skills.slice(0, 4)}
         />
       )}
-      <About skills={userInfo.data.skills} />
-      <Services />
+      {userInfo.data && (
+        <About
+          avatar={userInfo.data.about.avatar.url}
+          address={userInfo.data.about.address}
+          description={userInfo.data.about.description}
+          title={userInfo.data.about.title}
+          experience={userInfo.data.about["exp_year"]}
+        />
+      )}
+      {userInfo.data && <Services skills={userInfo.data.skills} />}
       <Portfolio />
       <Video />
       <Testimonials />

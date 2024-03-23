@@ -33,7 +33,7 @@
     }
   }
   &__main {
-    background: url("../../assets/img/about/2.jpg");
+    // background: url("../../assets/img/about/2.jpg");
     position: absolute;
     top: 0px;
     bottom: 0px;
@@ -42,7 +42,16 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    border-radius: 10px;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      object-fit: cover;
+    }
   }
   &__experience {
     position: absolute;
@@ -146,6 +155,7 @@
   left: 0px;
   bottom: 0px;
   right: 0px;
+  z-index: 10;
 
   text {
     font-family: "Poppins";
@@ -157,6 +167,7 @@
 
   svg {
     position: absolute;
+    z-index: 10;
     left: -90px;
     top: -90px;
     width: 400px;

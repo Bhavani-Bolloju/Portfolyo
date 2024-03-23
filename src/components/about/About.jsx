@@ -2,9 +2,10 @@
 
 import classes from "./About.module.scss";
 import thumbs from "../../assets/img/thumbs/1-1.jpg";
-import signature from "../../assets/img/signature.png";
+// import signature from "../../assets/img/signature.png";
 
-function About() {
+function About({ avatar, address, description, title, experience }) {
+  // console.log(avatar, address, description, title);
   return (
     <section className={classes["about"]}>
       <div className={classes["about__container"]}>
@@ -15,13 +16,16 @@ function About() {
               <div
                 className={classes["about__main"]}
                 data-img-url="../../assets/img/about/2.jpg"
-              ></div>
+              >
+                <img src={avatar} alt="user" />
+              </div>
               <div className={classes["about__experience"]}>
                 <h3
                   className={classes["about__year"]}
                   data-img-url="../../assets/img/about/2.jpg"
                 >
-                  7
+                  {/* 7 */}
+                  {experience}
                 </h3>
                 <div className={classes.circle}>
                   <svg
@@ -60,20 +64,22 @@ function About() {
             <div className={classes["about__title"]}>
               <span>About Me</span>
               <h3>
-                A passionate Senior Designer and Front-End Developer based In
-                NYC, USA
+                A passionate {title} based In {address}
+                {/* A passionate Senior Designer and Front-End Developer based In
+                NYC, USA */}
               </h3>
             </div>
             <div className={classes["about__text"]}>
               <p>
-                I am passionate Senior Designer, and I'm very passionate and
+                {/* I am passionate Senior Designer, and I'm very passionate and
                 dedicated to my work. With 7 years experience as a professional
                 Web developer, I have acquired the skills and knowledge
-                necessary to make your project a success.
+                necessary to make your project a success. */}
+                {description}
               </p>
             </div>
             <div className={classes["about__signature"]}>
-              <img src={signature} alt="" />
+              {/* <img src={signature} alt="" /> */}
             </div>
             <div className={classes["about__button"]}>
               <a href="#">Download CV</a>

@@ -1,14 +1,13 @@
 // import React from 'react'
 import classes from "./Hero.module.scss";
 import video1 from "../../assets/video/1.mp4";
-import html from "../../assets/img/svg/html.svg";
-import css from "../../assets/img/svg/css.svg";
-import bootstrap from "../../assets/img/svg/bootstrap.svg";
-import angular from "../../assets/img/svg/angular.svg";
+// import html from "../../assets/img/svg/html.svg";
+// import css from "../../assets/img/svg/css.svg";
+// import bootstrap from "../../assets/img/svg/bootstrap.svg";
+// import angular from "../../assets/img/svg/angular.svg";
 // import avatar from "../../assets/img/about/4.jpg";
 
 function Hero({ title, subtitle, avatar, name, skills }) {
-  console.log(skills);
   return (
     <div className={classes.hero}>
       <div className={classes["hero__container"]}>
