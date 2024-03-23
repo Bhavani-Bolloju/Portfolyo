@@ -5,9 +5,10 @@ import html from "../../assets/img/svg/html.svg";
 import css from "../../assets/img/svg/css.svg";
 import bootstrap from "../../assets/img/svg/bootstrap.svg";
 import angular from "../../assets/img/svg/angular.svg";
-import avatar from "../../assets/img/about/4.jpg";
+// import avatar from "../../assets/img/about/4.jpg";
 
-function Hero() {
+function Hero({ title, subtitle, avatar, name, skills }) {
+  console.log(skills);
   return (
     <div className={classes.hero}>
       <div className={classes["hero__container"]}>
@@ -18,14 +19,16 @@ function Hero() {
                 <source src={video1} type="video/mp4" />
               </video>
               <h3>
-                Senior Designer
+                {/* Senior Designer
                 <br />
-                &amp; Developer
+                &amp; Developer */}
+                {title}
               </h3>
             </div>
             <p className={classes["hero__desc"]}>
-              Hi, I'm Alan Walker. A passionate Senior Designer and Front-End
-              Developer based In NYC, USA
+              {/* Hi, I'm Alan Walker. A passionate Senior Designer and Front-End
+              Developer based In NYC, USA */}
+              Hi, I'm {name}. {subtitle}
             </p>
             <div className={classes["hero__short-skills"]}>
               <div className={classes["hero__text"]}>
@@ -38,6 +41,17 @@ function Hero() {
 
               <div className={classes["hero__icons"]}>
                 <ul>
+                  {skills.map((skill) => (
+                    <li key={skill.image["public_id"]}>
+                      <img
+                        className="svg"
+                        src={skill.image.url}
+                        alt={skill.name}
+                      />
+                    </li>
+                  ))}
+                </ul>
+                {/* <ul>
                   <li>
                     <img className="svg" src={html} alt="html" />
                   </li>
@@ -50,7 +64,7 @@ function Hero() {
                   <li>
                     <img className="svg" src={bootstrap} alt="bootstrap" />
                   </li>
-                </ul>
+                </ul> */}
               </div>
             </div>
           </div>
