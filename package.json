@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
@@ -24,5 +26,10 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "sass": "^1.72.0",
     "vite": "^5.1.6"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
 }
