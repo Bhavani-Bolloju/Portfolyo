@@ -1,5 +1,6 @@
 // import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 import classes from "./Contact.module.scss";
@@ -189,7 +190,7 @@ function Contact() {
           >
             <div className={classes["contact__map_wrap"]}>
               <div className={classes["contact__map"]} id="ieatmaps">
-                <MapContainer zoom={13} scrollWheelZoom={false}>
+                <MapContainer zoom={10}>
                   <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
