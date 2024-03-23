@@ -1,7 +1,10 @@
 // import React from 'react'
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 import classes from "./Contact.module.scss";
 function Contact() {
+  const position = [51.505, -0.09];
   return (
     <section className={classes.contact}>
       <div className={classes["contact__container"]}>
@@ -153,7 +156,7 @@ function Contact() {
                         id="name"
                         type="text"
                         placeholder="Name"
-                        autocomplete="off"
+                        autoComplete="off"
                       />
                     </li>
                     <li>
@@ -161,7 +164,7 @@ function Contact() {
                         id="email"
                         type="text"
                         placeholder="Email"
-                        autocomplete="off"
+                        autoComplete="off"
                       />
                     </li>
                   </ul>
@@ -185,7 +188,19 @@ function Contact() {
             data-wow-delay="0.2s"
           >
             <div className={classes["contact__map_wrap"]}>
-              <div className={classes["contact__map"]} id="ieatmaps"></div>
+              <div className={classes["contact__map"]} id="ieatmaps">
+                <MapContainer zoom={13} scrollWheelZoom={false}>
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  />
+                  <Marker position={position}>
+                    <Popup>
+                      A pretty CSS3 popup. <br /> Easily customizable.
+                    </Popup>
+                  </Marker>
+                </MapContainer>
+              </div>
             </div>
           </div>
         </div>

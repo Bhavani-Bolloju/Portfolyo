@@ -184,11 +184,9 @@
     top: 6px;
   }
   &__map_wrap {
-    border: 1px solid;
+    height: 30rem;
   }
   &__map {
-    min-height: 359px;
-    width: 100%;
-    border-radius: 10px;
+    height: 50rem;
   }
 }

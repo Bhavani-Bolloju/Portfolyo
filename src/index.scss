@@ -77,3 +77,19 @@ body {
   overflow-x: hidden;
   width: 100%;
 }
+
+.leaflet {
+  &-pane {
+    height: 100%;
+    width: 100%;
+  }
+
+  &-proxy {
+    height: 10rem;
+  }
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 30rem;
+}
