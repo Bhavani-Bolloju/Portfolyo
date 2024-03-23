@@ -115,7 +115,7 @@ z"
 
 function Services({ skills, services }) {
   return (
-    <section className={classes.services}>
+    <section className={classes.services} id="services">
       <div className={classes["services__container"]}>
         <div className={classes["services__inner"]}>
           <div className={classes["services__left"]}>
@@ -407,9 +407,9 @@ function Services({ skills, services }) {
                 </div>
               </li> */}
 
-              {services.map((service) => (
+              {services.map((service, i) => (
                 <ServiceItem
-                  key={service.image["_id"]}
+                  key={service.image["_id"] + "" + i}
                   ServiceUrl={service.image.url}
                   serviceName={service.name}
                 />

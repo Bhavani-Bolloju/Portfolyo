@@ -4,6 +4,8 @@ import logo from "../../assets/img/logo/dark.png";
 import audio1 from "../../assets/audio/1.mp3";
 import audio2 from "../../assets/audio/2.mp3";
 
+import { Link } from "react-scroll";
+
 function Header() {
   const [isopen, setIsopen] = useState(false);
   const audioRef1 = useRef();
@@ -36,22 +38,76 @@ function Header() {
         <nav className={navClass}>
           <ul className={classes["nav__list"]}>
             <li className={classes["nav__item"]}>
-              <a href="#">home</a>
+              {/* <a href="#">home</a> */}
+              <Link
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={800}
+              >
+                home
+              </Link>
             </li>
             <li className={classes["nav__item"]}>
-              <a href="#">about</a>
+              {/* <a href="#">about</a> */}
+              <Link
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={800}
+              >
+                about
+              </Link>
             </li>
             <li className={classes["nav__item"]}>
-              <a href="#">services</a>
+              {/* <a href="#">services</a> */}
+              <Link
+                to="services"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={800}
+              >
+                services
+              </Link>
             </li>
             <li className={classes["nav__item"]}>
-              <a href="#">portfolio</a>
+              {/* <a href="#">portfolio</a> */}
+              <Link
+                to="portfolio"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={800}
+              >
+                portfolio
+              </Link>
             </li>
             <li className={classes["nav__item"]}>
-              <a href="#">news</a>
+              {/* <a href="#">news</a> */}
+              <Link
+                to="news"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={800}
+              >
+                news
+              </Link>
             </li>
             <li className={classes["nav__item"]}>
-              <a href="#">contact</a>
+              {/* <a href="#">contact</a> */}
+              <Link
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={800}
+              >
+                contact
+              </Link>
             </li>
           </ul>
         </nav>

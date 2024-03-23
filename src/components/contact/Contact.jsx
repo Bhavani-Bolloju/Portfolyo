@@ -1,13 +1,13 @@
 // import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Icon } from "leaflet";
+// import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 import classes from "./Contact.module.scss";
 function Contact() {
   const position = [51.505, -0.09];
   return (
-    <section className={classes.contact}>
+    <section className={classes.contact} id="contact">
       <div className={classes["contact__container"]}>
         <div className={classes["contact__title"]}>
           <span>Contact</span>

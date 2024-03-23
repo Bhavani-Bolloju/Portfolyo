@@ -7,7 +7,7 @@ import thumbs from "../../assets/img/thumbs/1-1.jpg";
 function About({ avatar, address, description, title, experience }) {
   // console.log(avatar, address, description, title);
   return (
-    <section className={classes["about"]}>
+    <section className={classes["about"]} id="about">
       <div className={classes["about__container"]}>
         <div className={classes["about__inner"]}>
           <div className={classes["about__left"]}>

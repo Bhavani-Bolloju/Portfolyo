@@ -19,7 +19,7 @@ function News() {
   };
 
   return (
-    <section className={classes.news}>
+    <section className={classes.news} id="news">
       <div className={classes["news__container"]}>
         <div className={classes["news__title"]}>
           <span>News</span>

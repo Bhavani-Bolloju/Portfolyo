@@ -9,7 +9,7 @@ import video1 from "../../assets/video/1.mp4";
 
 function Hero({ title, subtitle, avatar, name, skills }) {
   return (
-    <div className={classes.hero}>
+    <div className={classes.hero} id="home">
       <div className={classes["hero__container"]}>
         <div className={classes["hero__content"]}>
           <div className={classes["hero__texts"]}>

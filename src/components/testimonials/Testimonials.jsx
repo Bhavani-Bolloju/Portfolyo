@@ -1,7 +1,7 @@
 import classes from "./Testimonials.module.scss";
-import user1 from "../../assets/img/about/1.jpg";
-import user2 from "../../assets/img/about/2.jpg";
-import user3 from "../../assets/img/about/3.jpg";
+// import user1 from "../../assets/img/about/1.jpg";
+// import user2 from "../../assets/img/about/2.jpg";
+// import user3 from "../../assets/img/about/3.jpg";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css";

@@ -49,7 +49,7 @@ function Portfolio({ projects }) {
     : `${classes["project__hidden"]}`;
 
   return (
-    <section className={classes.portfolio}>
+    <section className={classes.portfolio} id="portfolio">
       <div className={classes["portfolio__container"]}>
         <div className={classes["portfolio__inner"]}>
           <div className={classes["portfolio__title"]}>
