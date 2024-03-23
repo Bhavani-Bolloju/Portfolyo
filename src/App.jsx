@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.scss";
 
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
@@ -12,11 +13,14 @@ import Contact from "./components/contact/Contact";
 import Copyrights from "./components/copyrights/Copyrights";
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
   const [userInfo, setUserInfo] = useState({
     error: null,
     isLoading: false,
     data: null,
   });
+
+  // const [preloading, setPreloading] = useState(true);
 
   useEffect(() => {
     const fetchData = async function () {
@@ -40,45 +44,63 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(userInfo.data);
+  useEffect(() => {
+    // Simulate content loading delay
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // console.log(classes);
+  console.log(loaded);
 
   return (
-    <div>
-      <Header />
-      {userInfo.data && (
-        <Hero
-          title={userInfo.data.about.title}
-          subtitle={userInfo.data.about.subTitle}
-          name={userInfo.data.about.name}
-          avatar={userInfo.data.about.avatar.url}
-          skills={userInfo.data.skills.slice(0, 4)}
-        />
+    <div className={`${loaded ? "preloaded" : ""}`}>
+      {loaded && (
+        <>
+          <Header />
+          {userInfo.data && (
+            <Hero
+              title={userInfo.data.about.title}
+              subtitle={userInfo.data.about.subTitle}
+              name={userInfo.data.about.name}
+              avatar={userInfo.data.about.avatar.url}
+              skills={userInfo.data.skills.slice(0, 4)}
+            />
+          )}
+          {userInfo.data && (
+            <About
+              avatar={userInfo.data.about.avatar.url}
+              address={userInfo.data.about.address}
+              description={userInfo.data.about.description}
+              title={userInfo.data.about.title}
+              experience={userInfo.data.about["exp_year"]}
+            />
+          )}
+          {userInfo.data && (
+            <Services
+              skills={userInfo.data.skills.slice(0, 3)}
+              services={userInfo.data.services.slice(0, 4)}
+            />
+          )}
+          {userInfo.data && (
+            <Portfolio projects={userInfo.data.projects.slice(0, 6)} />
+          )}
+          <Video />
+          {userInfo.data && (
+            <Testimonials testimonials={userInfo.data.testimonials} />
+          )}
+          <News />
+          <Contact />
+          <Copyrights />
+        </>
       )}
-      {userInfo.data && (
-        <About
-          avatar={userInfo.data.about.avatar.url}
-          address={userInfo.data.about.address}
-          description={userInfo.data.about.description}
-          title={userInfo.data.about.title}
-          experience={userInfo.data.about["exp_year"]}
-        />
-      )}
-      {userInfo.data && (
-        <Services
-          skills={userInfo.data.skills.slice(0, 3)}
-          services={userInfo.data.services.slice(0, 4)}
-        />
-      )}
-      {userInfo.data && (
-        <Portfolio projects={userInfo.data.projects.slice(0, 6)} />
-      )}
-      <Video />
-      {userInfo.data && (
-        <Testimonials testimonials={userInfo.data.testimonials} />
-      )}
-      <News />
-      <Contact />
-      <Copyrights />
+
+      <div className={`preloader ${loaded ? "preloaded__inactive" : ""}`}>
+        <div className="loader_line">loading</div>
+      </div>
     </div>
   );
 }
