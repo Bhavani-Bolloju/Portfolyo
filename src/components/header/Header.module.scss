@@ -5,12 +5,18 @@
   right: 0px;
   z-index: 1;
   background-color: var(--color-gray-6);
+  transition: all 0.5s;
+
+  &.active {
+    background-color: var(--color-white);
+  }
+
   &__container {
     width: 100%;
     height: auto;
     display: flex;
     align-items: center;
-    background-color: var(--color-gray-6);
+    background-color: inherit;
     justify-content: space-between;
     padding: 20px 40px 20px 50px;
   }
@@ -71,6 +77,11 @@
       font-family: "Poppins";
 
       &.active {
+        color: var(--color-accent);
+      }
+
+      &:hover {
+        cursor: pointer;
         color: var(--color-accent);
       }
     }

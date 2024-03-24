@@ -18,7 +18,7 @@ function App() {
   const [userInfo, setUserInfo] = useState({
     error: null,
     isLoading: false,
-    data: null,
+    data: null
   });
 
   // const [preloading, setPreloading] = useState(true);
@@ -55,7 +55,7 @@ function App() {
   }, []);
 
   // console.log(classes);
-  console.log(loaded);
+  // console.log(loaded);
 
   return (
     <div>

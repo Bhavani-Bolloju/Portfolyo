@@ -273,6 +273,8 @@
   }
 
   &.active .close-overlay {
+    visibility: visible;
+    opacity: 1;
     transform: translate(0%, 0%);
   }
 
@@ -475,6 +477,8 @@
   background-color: transparent;
   border: none;
   outline: none;
+  visibility: hidden;
+  opacity: 0;
   svg {
     fill: var(--color-white);
     width: 5rem;

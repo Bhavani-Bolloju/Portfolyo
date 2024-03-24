@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import classes from "./Header.module.scss";
 import logo from "../../assets/img/logo/dark.png";
 import audio1 from "../../assets/audio/1.mp3";
@@ -8,6 +8,7 @@ import { Link } from "react-scroll";
 
 function Header() {
   const [isopen, setIsopen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const audioRef1 = useRef();
   const audioRef2 = useRef();
 
@@ -21,6 +22,19 @@ function Header() {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = function () {
+      const position = window.scrollY;
+      setScrollPosition(position);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const hamburgerClass = isopen
     ? `${classes["hamburger__button"]} ${classes.active}`
     : `${classes["hamburger__button"]}`;
@@ -29,8 +43,13 @@ function Header() {
     ? `${classes["nav"]} ${classes.active}`
     : `${classes["nav"]}`;
 
+  const navStyle =
+    scrollPosition > 100
+      ? `${classes.header} ${classes.active}`
+      : `${classes.header}`;
+
   return (
-    <header className={classes.header}>
+    <header className={navStyle}>
       <div className={classes["header__container"]}>
         <div className={classes["header__logo"]}>
           <img src={logo} />
@@ -38,7 +57,6 @@ function Header() {
         <nav className={navClass}>
           <ul className={classes["nav__list"]}>
             <li className={classes["nav__item"]}>
-              {/* <a href="#">home</a> */}
               <Link
                 to="home"
                 spy={true}
@@ -51,7 +69,6 @@ function Header() {
               </Link>
             </li>
             <li className={classes["nav__item"]}>
-              {/* <a href="#">about</a> */}
               <Link
                 to="about"
                 spy={true}
@@ -64,7 +81,6 @@ function Header() {
               </Link>
             </li>
             <li className={classes["nav__item"]}>
-              {/* <a href="#">services</a> */}
               <Link
                 to="services"
                 spy={true}
@@ -77,7 +93,6 @@ function Header() {
               </Link>
             </li>
             <li className={classes["nav__item"]}>
-              {/* <a href="#">portfolio</a> */}
               <Link
                 to="portfolio"
                 spy={true}
@@ -90,7 +105,6 @@ function Header() {
               </Link>
             </li>
             <li className={classes["nav__item"]}>
-              {/* <a href="#">news</a> */}
               <Link
                 to="news"
                 spy={true}
@@ -103,7 +117,6 @@ function Header() {
               </Link>
             </li>
             <li className={classes["nav__item"]}>
-              {/* <a href="#">contact</a> */}
               <Link
                 to="contact"
                 spy={true}

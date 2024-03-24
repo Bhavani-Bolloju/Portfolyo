@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import thumbs3 from "../../assets/img/thumbs/4-3.jpg";
 import news1 from "../../assets/img/news/1.jpg";
 import classes from "./Modal.module.scss";
@@ -24,10 +25,10 @@ const Modal = function ({ isopen, date, branding, title, onClose }) {
         </div>
         <div className={classes["content"]}>
           <p className={classes["bigger"]}>
-            Just because we can't get out and about like we normally would,
+            Just because we can&apos;t get out and about like we normally would,
             doesn’t mean we have to stop taking pictures. There’s still plenty
-            you can do, provided you're prepared to use some imagination. Here
-            are a few ideas to keep you shooting until normal life resumes.
+            you can do, provided you&apos;re prepared to use some imagination.
+            Here are a few ideas to keep you shooting until normal life resumes.
           </p>
           <p>
             Most photographers love to shoot the unusual, and you don’t get much
