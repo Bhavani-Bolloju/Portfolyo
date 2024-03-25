@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import thumbs from "../../assets/img/thumbs/1-1.jpg";
 import thumbs2 from "../../assets/img/thumbs/4-2.jpg";
@@ -13,13 +13,18 @@ import twitter from "../../assets/img/svg/social/twitter.svg";
 import dribble from "../../assets/img/svg/social/dribble.svg";
 import tiktok from "../../assets/img/svg/social/tik-tok.svg";
 import classes from "./Portfolio.module.scss";
+import { cursorContext } from "../cntx/cursorcontext";
 
 const ProjectItem = function ({ onOpen, imageUrl, title }) {
+  const { handleCursor } = useContext(cursorContext);
+
   return (
     <li
       onClick={onOpen}
       className={classes["project__item"]}
       data-wow-duration="1.5s"
+      onMouseEnter={handleCursor}
+      onMouseLeave={handleCursor}
     >
       <div className={classes["project__item-inner"]}>
         <div className={classes["project__item-image"]}>

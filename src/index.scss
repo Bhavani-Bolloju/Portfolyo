@@ -59,6 +59,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
 }
 
 html {
@@ -94,6 +95,35 @@ body {
   height: 30rem;
 }
 
-// .active {
-//   color: red;
-// }
+.custom-cursor {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 2px solid var(--color-accent);
+  transform: translate(-50%, -50%);
+  z-index: 9999999;
+  transition: all 0.5s;
+
+  .dot {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+    transform-origin: center;
+    transition: all 0.5s;
+  }
+
+  &.active {
+    border: none;
+    .dot {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0.5;
+    }
+  }
+}

@@ -79,11 +79,6 @@
       &.active {
         color: var(--color-accent);
       }
-
-      &:hover {
-        cursor: pointer;
-        color: var(--color-accent);
-      }
     }
   }
 }
@@ -140,7 +135,7 @@
   }
 
   &:hover {
-    cursor: pointer;
+    cursor: none;
   }
 }
 

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { cursorContext } from "../cntx/cursorcontext";
 
 import classes from "./Video.module.scss";
 
@@ -36,6 +37,7 @@ const VideoOverlay = ({ onClose, link }) => {
 
 function Video() {
   const [showOverlay, setShowOverlay] = useState(false);
+  const { handleCursor } = useContext(cursorContext);
 
   const openOverlay = () => {
     setShowOverlay(true);
@@ -70,6 +72,8 @@ function Video() {
               data-wow-duration="1.5s"
               data-wow-delay="0.2s"
               onClick={openOverlay}
+              onMouseLeave={handleCursor}
+              onMouseDown={handleCursor}
             >
               Watch Video
             </button>

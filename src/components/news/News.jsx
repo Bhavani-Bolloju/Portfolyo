@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import thumbs from "../../assets/img/thumbs/4-3.jpg";
 import news1 from "../../assets/img/news/1.jpg";
@@ -6,10 +6,13 @@ import news2 from "../../assets/img/news/2.jpg";
 import news3 from "../../assets/img/news/3.jpg";
 import classes from "./News.module.scss";
 import Modal from "../modal/Modal";
+import { cursorContext } from "../cntx/cursorcontext";
 // import thumbs3 from "../../assets/img/thumbs/4-3.jpg";
 
 function News() {
   const [isopen, setIsopen] = useState(false);
+
+  const { handleCursor } = useContext(cursorContext);
 
   const openHandler = function () {
     setIsopen(true);
@@ -31,6 +34,8 @@ function News() {
               onClick={openHandler}
               className={classes["news__item"]}
               data-wow-duration="1.5s"
+              onMouseEnter={handleCursor}
+              onMouseLeave={handleCursor}
             >
               <div className={classes["news__item--inner"]}>
                 <div className={classes["news__item--image"]}>
@@ -58,6 +63,8 @@ function News() {
               className={classes["news__item"]}
               data-wow-duration="1.5s"
               data-wow-delay="0.2s"
+              onMouseEnter={handleCursor}
+              onMouseLeave={handleCursor}
             >
               <div className={classes["news__item--inner"]}>
                 <div className={classes["news__item--image"]}>
@@ -136,6 +143,8 @@ function News() {
               className={classes["news__item"]}
               data-wow-duration="1.5s"
               data-wow-delay="0.4s"
+              onMouseEnter={handleCursor}
+              onMouseLeave={handleCursor}
             >
               <div className={classes["news__item--inner"]}>
                 <div className={classes["news__item--image"]}>

@@ -254,13 +254,10 @@
   }
 }
 
-// @keyframes lineround {
-//   0% {
-//     transform: scaleY(0);
-//     // transform: translateY(-100%);
-//   }
-//   100% {
-//     transform: scaleY(100%);
-//     // transform: translateY(200%);
-//   }
+// button:hover .custom-cursor {
+//   background-color: pink;
 // }
+
+.app .custom-cursor {
+  border-color: orange;
+}

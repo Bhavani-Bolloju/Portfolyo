@@ -1,11 +1,16 @@
+/* eslint-disable react/prop-types */
 // import React from 'react'
 
+import { useContext } from "react";
 import classes from "./About.module.scss";
 import thumbs from "../../assets/img/thumbs/1-1.jpg";
+import { cursorContext } from "../cntx/cursorcontext";
 // import signature from "../../assets/img/signature.png";
 
 function About({ avatar, address, description, title, experience }) {
   // console.log(avatar, address, description, title);
+  const { handleCursor } = useContext(cursorContext);
+
   return (
     <section className={classes["about"]} id="about">
       <div className={classes["about__container"]}>
@@ -81,7 +86,11 @@ function About({ avatar, address, description, title, experience }) {
             <div className={classes["about__signature"]}>
               {/* <img src={signature} alt="" /> */}
             </div>
-            <div className={classes["about__button"]}>
+            <div
+              className={classes["about__button"]}
+              onMouseEnter={handleCursor}
+              onMouseLeave={handleCursor}
+            >
               <a href="#">Download CV</a>
             </div>
           </div>

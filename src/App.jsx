@@ -11,7 +11,7 @@ import Testimonials from "./components/testimonials/Testimonials";
 import News from "./components/news/News";
 import Contact from "./components/contact/Contact";
 import Copyrights from "./components/copyrights/Copyrights";
-// import Cursor from "./components/UI/Cursor";
+import CursorContextProvider from "./components/cntx/cursorcontext";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -54,58 +54,55 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // console.log(classes);
-  console.log(loaded);
-
   const preloadClass = loaded
     ? `${classes.preloaded} ${classes.active}`
     : `${classes.preloaded}`;
 
   return (
-    <div>
-      {loaded && (
-        <>
-          <Header />
-          {userInfo.data && (
-            <Hero
-              title={userInfo.data.about.title}
-              subtitle={userInfo.data.about.subTitle}
-              name={userInfo.data.about.name}
-              avatar={userInfo.data.about.avatar.url}
-              skills={userInfo.data.skills.slice(0, 4)}
-            />
-          )}
-          {userInfo.data && (
-            <About
-              avatar={userInfo.data.about.avatar.url}
-              address={userInfo.data.about.address}
-              description={userInfo.data.about.description}
-              title={userInfo.data.about.title}
-              experience={userInfo.data.about["exp_year"]}
-            />
-          )}
-          {userInfo.data && (
-            <Services
-              skills={userInfo.data.skills.slice(0, 3)}
-              services={userInfo.data.services.slice(0, 4)}
-            />
-          )}
-          {userInfo.data && (
-            <Portfolio projects={userInfo.data.projects.slice(0, 6)} />
-          )}
-          <Video />
-          {userInfo.data && (
-            <Testimonials testimonials={userInfo.data.testimonials} />
-          )}
-          <News />
-          <Contact />
-          <Copyrights />
-        </>
-      )}
+    <div className={classes.app}>
+      <CursorContextProvider>
+        <Header />
+        {userInfo.data && (
+          <Hero
+            title={userInfo.data.about.title}
+            subtitle={userInfo.data.about.subTitle}
+            name={userInfo.data.about.name}
+            avatar={userInfo.data.about.avatar.url}
+            skills={userInfo.data.skills.slice(0, 4)}
+          />
+        )}
+        {userInfo.data && (
+          <About
+            avatar={userInfo.data.about.avatar.url}
+            address={userInfo.data.about.address}
+            description={userInfo.data.about.description}
+            title={userInfo.data.about.title}
+            experience={userInfo.data.about["exp_year"]}
+          />
+        )}
+        {userInfo.data && (
+          <Services
+            skills={userInfo.data.skills.slice(0, 3)}
+            services={userInfo.data.services.slice(0, 4)}
+          />
+        )}
+        {userInfo.data && (
+          <Portfolio projects={userInfo.data.projects.slice(0, 6)} />
+        )}
+        <Video />
+        {userInfo.data && (
+          <Testimonials testimonials={userInfo.data.testimonials} />
+        )}
+        <News />
+        <Contact />
+        <Copyrights />
 
-      <div className={preloadClass}>
-        <div className={classes["loader__line"]}></div>
-      </div>
+        <div className={preloadClass}>
+          <div className={classes["loader__line"]}></div>
+        </div>
+
+        {/* <Cursor /> */}
+      </CursorContextProvider>
     </div>
   );
 }

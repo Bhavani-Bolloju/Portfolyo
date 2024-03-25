@@ -2,10 +2,15 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 // import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { cursorContext } from "../cntx/cursorcontext";
+import { useContext } from "react";
 
 import classes from "./Contact.module.scss";
 function Contact() {
   const position = [51.505, -0.09];
+
+  const { handleCursor } = useContext(cursorContext);
+
   return (
     <section className={classes.contact} id="contact">
       <div className={classes["contact__container"]}>
@@ -171,7 +176,12 @@ function Contact() {
                 <div className={classes["contact__last"]}>
                   <textarea id="message" placeholder="Message"></textarea>
                 </div>
-                <div className={classes["contact__button"]} data-color="dark">
+                <div
+                  className={classes["contact__button"]}
+                  data-color="dark"
+                  onMouseEnter={handleCursor}
+                  onMouseLeave={handleCursor}
+                >
                   <a id="send_message" href="#">
                     Send Message
                   </a>
