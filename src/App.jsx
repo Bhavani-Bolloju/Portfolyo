@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.scss";
+import classes from "./App.module.scss";
 
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
@@ -49,51 +49,63 @@ function App() {
     // Simulate content loading delay
     const timer = setTimeout(() => {
       setLoaded(true);
-    }, 3000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
 
   // console.log(classes);
-  // console.log(loaded);
+  console.log(loaded);
+
+  const preloadClass = loaded
+    ? `${classes.preloaded} ${classes.active}`
+    : `${classes.preloaded}`;
 
   return (
     <div>
-      <Header />
-      {userInfo.data && (
-        <Hero
-          title={userInfo.data.about.title}
-          subtitle={userInfo.data.about.subTitle}
-          name={userInfo.data.about.name}
-          avatar={userInfo.data.about.avatar.url}
-          skills={userInfo.data.skills.slice(0, 4)}
-        />
+      {loaded && (
+        <>
+          <Header />
+          {userInfo.data && (
+            <Hero
+              title={userInfo.data.about.title}
+              subtitle={userInfo.data.about.subTitle}
+              name={userInfo.data.about.name}
+              avatar={userInfo.data.about.avatar.url}
+              skills={userInfo.data.skills.slice(0, 4)}
+            />
+          )}
+          {userInfo.data && (
+            <About
+              avatar={userInfo.data.about.avatar.url}
+              address={userInfo.data.about.address}
+              description={userInfo.data.about.description}
+              title={userInfo.data.about.title}
+              experience={userInfo.data.about["exp_year"]}
+            />
+          )}
+          {userInfo.data && (
+            <Services
+              skills={userInfo.data.skills.slice(0, 3)}
+              services={userInfo.data.services.slice(0, 4)}
+            />
+          )}
+          {userInfo.data && (
+            <Portfolio projects={userInfo.data.projects.slice(0, 6)} />
+          )}
+          <Video />
+          {userInfo.data && (
+            <Testimonials testimonials={userInfo.data.testimonials} />
+          )}
+          <News />
+          <Contact />
+          <Copyrights />
+        </>
       )}
-      {userInfo.data && (
-        <About
-          avatar={userInfo.data.about.avatar.url}
-          address={userInfo.data.about.address}
-          description={userInfo.data.about.description}
-          title={userInfo.data.about.title}
-          experience={userInfo.data.about["exp_year"]}
-        />
-      )}
-      {userInfo.data && (
-        <Services
-          skills={userInfo.data.skills.slice(0, 3)}
-          services={userInfo.data.services.slice(0, 4)}
-        />
-      )}
-      {userInfo.data && (
-        <Portfolio projects={userInfo.data.projects.slice(0, 6)} />
-      )}
-      <Video />
-      {userInfo.data && (
-        <Testimonials testimonials={userInfo.data.testimonials} />
-      )}
-      <News />
-      <Contact />
-      <Copyrights />
+
+      <div className={preloadClass}>
+        <div className={classes["loader__line"]}></div>
+      </div>
     </div>
   );
 }
