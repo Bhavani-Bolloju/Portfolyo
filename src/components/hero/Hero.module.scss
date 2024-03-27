@@ -1,5 +1,5 @@
 .hero {
-  padding-top: 15rem;
+  padding-top: 20rem;
   background-color: var(--color-gray-6);
   height: 100vh;
 
@@ -75,6 +75,7 @@
       line-height: 1.3;
       padding: 0.5rem 1rem;
       text-transform: capitalize;
+      margin-left: -1rem;
     }
   }
   &__desc {
@@ -83,13 +84,14 @@
   }
   &__short-skills {
     width: 100%;
-    clear: both;
+    // clear: both;
     display: flex;
     align-items: center;
     line-height: 1;
-    position: absolute;
-    bottom: 8%;
-    left: auto;
+    // position: absolute;
+    // bottom: 8%;
+    // left: auto;
+    margin-top: 5rem;
   }
 
   &__text {
@@ -114,26 +116,25 @@
   }
 
   &__icons {
-    margin-left: 80px;
+    // margin-left: 80px;
     ul {
       margin: 0px;
       list-style-type: none;
+      display: flex;
+      gap: 2rem;
       li {
-        margin: 0px 20px 10px 0px;
-        float: left;
-        width: 65px;
-        height: 65px;
+        width: 4rem;
+        height: 4rem;
         background-color: #fff;
         border-radius: 100%;
         position: relative;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.09);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 25px;
-          height: 25px;
+          width: 20px;
+          height: 20px;
         }
       }
     }

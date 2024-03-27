@@ -71,6 +71,7 @@ function App() {
           name={userInfo.data.about.name}
           avatar={userInfo.data.about.avatar.url}
           skills={userInfo.data.skills.slice(0, 4)}
+          socialIcons={userInfo.data["social_handles"]}
         />
       )}
       {userInfo.data && (
@@ -90,7 +91,7 @@ function App() {
       )}
       {userInfo.data && (
         <Services
-          skills={userInfo.data.skills.slice(0, 3)}
+          skills={userInfo.data.skills.slice(0, 4)}
           services={userInfo.data.services.slice(0, 4)}
         />
       )}

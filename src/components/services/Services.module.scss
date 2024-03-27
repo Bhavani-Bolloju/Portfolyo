@@ -78,11 +78,11 @@
     &-bar {
       width: 0%;
       height: 100%;
+      transition: all 2s 0.2;
     }
     &-bar-in {
       height: 100%;
       background: #d1701f;
-      width: 80%;
       overflow: hidden;
       border-radius: 50px;
     }

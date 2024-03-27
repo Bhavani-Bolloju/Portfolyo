@@ -7,7 +7,7 @@ import video1 from "../../assets/video/1.mp4";
 // import angular from "../../assets/img/svg/angular.svg";
 // import avatar from "../../assets/img/about/4.jpg";
 
-function Hero({ title, subtitle, avatar, name, skills }) {
+function Hero({ title, subtitle, avatar, name, skills, socialIcons }) {
   return (
     <div className={classes.hero} id="home">
       <div className={classes["hero__container"]}>
@@ -30,17 +30,17 @@ function Hero({ title, subtitle, avatar, name, skills }) {
               Hi, I'm {name}. {subtitle}
             </p>
             <div className={classes["hero__short-skills"]}>
-              <div className={classes["hero__text"]}>
+              {/* <div className={classes["hero__text"]}>
                 <span>
                   High knowledge on
                   <br />
                   softwares
                 </span>
-              </div>
+              </div> */}
 
               <div className={classes["hero__icons"]}>
                 <ul>
-                  {skills?.map((skill) => (
+                  {socialIcons?.map((skill) => (
                     <li key={skill.image["public_id"]}>
                       <img
                         className="svg"
