@@ -40,7 +40,7 @@ function Hero({ title, subtitle, avatar, name, skills }) {
 
               <div className={classes["hero__icons"]}>
                 <ul>
-                  {skills.map((skill) => (
+                  {skills?.map((skill) => (
                     <li key={skill.image["public_id"]}>
                       <img
                         className="svg"

@@ -54,6 +54,8 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  console.log(userInfo.data);
+
   const preloadClass = loaded
     ? `${classes.preloaded} ${classes.active}`
     : `${classes.preloaded}`;
@@ -73,11 +75,17 @@ function App() {
       )}
       {userInfo.data && (
         <About
-          avatar={userInfo.data.about.avatar.url}
+          avatar={
+            userInfo.data.about.alternateAvatars[0].url ||
+            userInfo.data.about.avatar.url
+          }
           address={userInfo.data.about.address}
           description={userInfo.data.about.description}
           title={userInfo.data.about.title}
           experience={userInfo.data.about["exp_year"]}
+          quote={userInfo.data.about.quote}
+          phone={userInfo.data.about.phoneNumber}
+          email={userInfo.data.about.contactEmail}
         />
       )}
       {userInfo.data && (

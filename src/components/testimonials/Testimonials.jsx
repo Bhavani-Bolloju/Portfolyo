@@ -3,6 +3,7 @@ import classes from "./Testimonials.module.scss";
 // import user2 from "../../assets/img/about/2.jpg";
 // import user3 from "../../assets/img/about/3.jpg";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import TitleSlider from "../UI/TitleSlider";
 
 import "@splidejs/react-splide/css";
 
@@ -142,28 +143,7 @@ function Testimonials({ testimonials }) {
   return (
     <section className={classes.testimonial}>
       <div className={classes["testimonial__container"]}>
-        <div className={classes["testimonial__title"]}>
-          <div className={classes["testimonial__title-slider"]}>
-            <div className={classes["testimonial__title-slide"]}>
-              testimonial
-            </div>
-            <div className={classes["testimonial__title-slide"]}>
-              testimonial
-            </div>
-            <div className={classes["testimonial__title-slide"]}>
-              testimonial
-            </div>
-            <div className={classes["testimonial__title-slide"]}>
-              testimonial
-            </div>
-            <div className={classes["testimonial__title-slide"]}>
-              testimonial
-            </div>
-            <div className={classes["testimonial__title-slide"]}>
-              testimonial
-            </div>
-          </div>
-        </div>
+        <TitleSlider title="testimonial"></TitleSlider>
         <div className={classes["testimonial__content"]}>
           <div className={classes["testimonial__list"]}>
             <div className={classes["testimonial__wrapper"]}>
@@ -174,10 +154,10 @@ function Testimonials({ testimonials }) {
                   perPage: 1,
                   arrows: true,
                   pagination: false,
-                  speed: 1000,
-                  rewindSpeed: 1000,
+                  speed: 2000,
+                  rewindSpeed: 1500,
                   rewind: true,
-                  // autoplay: true,
+                  autoplay: true,
                   pauseOnHover: false,
                   pauseOnFocus: false,
                   width: "100%",
