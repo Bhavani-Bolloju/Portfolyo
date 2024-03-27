@@ -172,20 +172,41 @@ function Testimonials({ testimonials }) {
                 hasTrack={true}
                 options={{
                   perPage: 1,
-                  arrows: false,
+                  arrows: true,
                   pagination: false,
-                  rewind: true,
                   speed: 1000,
+                  rewindSpeed: 1000,
                   rewind: true,
-                  rewindSpeed: true,
+                  // autoplay: true,
                   pauseOnHover: false,
                   pauseOnFocus: false,
                   width: "100%",
                   gap: "100px",
-                  height: "100%",
+                  height: "100%"
                 }}
               >
-                {/* <SplideSlide>
+                {testimonials.map((el) => (
+                  <TestimonialItem
+                    key={el["_id"]}
+                    imageURL={el.image.url}
+                    name={el.name}
+                    position={el.position}
+                    review={el.review}
+                  />
+                ))}
+              </Splide>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Testimonials;
+
+{
+  /* <SplideSlide>
                   <div className={classes["testimonial__item"]}>
                     <ul className={classes["testimonial__stars"]}>
                       <li>
@@ -562,23 +583,5 @@ function Testimonials({ testimonials }) {
                       </g>
                     </svg>
                   </div>
-                </SplideSlide> */}
-                {testimonials.map((el) => (
-                  <TestimonialItem
-                    key={el["_id"]}
-                    imageURL={el.image.url}
-                    name={el.name}
-                    position={el.position}
-                    review={el.review}
-                  />
-                ))}
-              </Splide>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+                </SplideSlide> */
 }
-
-export default Testimonials;

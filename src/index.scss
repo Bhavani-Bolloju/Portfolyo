@@ -59,7 +59,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
+  // cursor: none;
 }
 
 html {
@@ -125,5 +125,21 @@ body {
       transform: translate(-50%, -50%) scale(2);
       opacity: 0.5;
     }
+  }
+}
+
+.splide__arrow {
+  background-color: var(--color-accent);
+  height: 5rem;
+  width: 5rem;
+  svg {
+    fill: white;
+  }
+
+  &--prev {
+    left: -5%;
+  }
+  &--next {
+    right: -5%;
   }
 }
