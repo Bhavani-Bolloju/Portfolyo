@@ -5,13 +5,16 @@ import classes from "./Services.module.scss";
 // import award from "../../assets/img/svg/award.svg";
 // import tools from "../../assets/img/svg/tools.svg";
 
-const ServiceProgress = function ({ skillName, percent }) {
+const ServiceProgress = function ({ skillName, percent, image }) {
   return (
     <div className={classes["services__progress-inner"]} data-value="95">
-      <span>
+      <span className={classes["services__progress-bar"]}>
         <span className={classes["services__progress-label"]}>
           {/* HTML &amp; CSS */}
-          {skillName}
+          <span className={classes.image}>
+            <img src={image} alt={skillName} />
+          </span>
+          <span className={classes.name}>{skillName}</span>
         </span>
         <span className={classes["services__progress-number"]}>{percent}%</span>
       </span>
@@ -39,6 +42,8 @@ const ServiceItem = function ({ ServiceUrl, serviceName }) {
 };
 
 function Services({ skills, services }) {
+  // console.log(skills, "services");
+
   return (
     <section className={classes.services} id="services">
       <div className={classes["services__container"]}>
@@ -59,6 +64,7 @@ function Services({ skills, services }) {
                   key={skill.image["_id"]}
                   percent={skill.percentage}
                   skillName={skill.name}
+                  image={skill.image.url}
                 />
               ))}
             </div>
