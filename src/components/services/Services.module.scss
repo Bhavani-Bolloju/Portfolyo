@@ -40,65 +40,8 @@
 
   &__text {
     width: 100%;
-    float: left;
     margin-top: 30px;
     margin-bottom: 37px;
-  }
-  &__progress {
-    width: 100%;
-    height: auto;
-
-    &-inner {
-      width: 100%;
-      margin-bottom: 25px;
-
-      &:last-child {
-        margin-bottom: 0px;
-      }
-    }
-    &-label {
-      margin: 0px 0px 5px 0px;
-      width: 100%;
-      display: block;
-      text-align: left;
-      color: #000;
-      font-family: "Poppins";
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-
-      .image {
-        width: 2rem;
-        height: 2rem;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-    }
-    &-number {
-      float: right;
-    }
-    &-background {
-      background: rgba(0, 0, 0, 0.09);
-      width: 100%;
-      min-width: 100%;
-      position: relative;
-      height: 7px;
-      border-radius: 50px;
-    }
-    &-bar {
-      width: 0%;
-      height: 100%;
-      transition: all 2s 0.2;
-    }
-    &-bar-in {
-      height: 100%;
-      background: #d1701f;
-      overflow: hidden;
-      border-radius: 50px;
-    }
   }
 
   &__right {

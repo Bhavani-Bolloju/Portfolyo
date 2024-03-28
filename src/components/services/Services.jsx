@@ -1,34 +1,7 @@
 // import React from 'react'
 import classes from "./Services.module.scss";
-// import design from "../../assets/img/svg/design.svg";
-// import code from "../../assets/img/svg/code.svg";
-// import award from "../../assets/img/svg/award.svg";
-// import tools from "../../assets/img/svg/tools.svg";
 
-const ServiceProgress = function ({ skillName, percent, image }) {
-  return (
-    <div className={classes["services__progress-inner"]} data-value="95">
-      <span className={classes["services__progress-bar"]}>
-        <span className={classes["services__progress-label"]}>
-          {/* HTML &amp; CSS */}
-          <span className={classes.image}>
-            <img src={image} alt={skillName} />
-          </span>
-          <span className={classes.name}>{skillName}</span>
-        </span>
-        <span className={classes["services__progress-number"]}>{percent}%</span>
-      </span>
-      <div className={classes["services__progress-background"]}>
-        <div
-          className={classes["services__progress-bar"]}
-          style={{ width: `${percent}%` }}
-        >
-          <div className={classes["services__progress-bar-in"]}></div>
-        </div>
-      </div>
-    </div>
-  );
-};
+import ServiceProgress from "./ServiceProgress";
 
 const ServiceItem = function ({ ServiceUrl, serviceName }) {
   return (
