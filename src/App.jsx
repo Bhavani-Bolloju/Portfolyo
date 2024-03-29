@@ -62,56 +62,56 @@ function App() {
 
   return (
     <div className={classes.app}>
-      {/* <CursorContextProvider> */}
-      <Header />
-      {userInfo.data && (
-        <Hero
-          title={userInfo.data.about.title}
-          subtitle={userInfo.data.about.subTitle}
-          name={userInfo.data.about.name}
-          avatar={userInfo.data.about.avatar.url}
-          skills={userInfo.data.skills.slice(0, 4)}
-          socialIcons={userInfo.data["social_handles"]}
-        />
-      )}
-      {userInfo.data && (
-        <About
-          avatar={
-            userInfo.data.about.alternateAvatars[0].url ||
-            userInfo.data.about.avatar.url
-          }
-          address={userInfo.data.about.address}
-          description={userInfo.data.about.description}
-          title={userInfo.data.about.title}
-          experience={userInfo.data.about["exp_year"]}
-          quote={userInfo.data.about.quote}
-          phone={userInfo.data.about.phoneNumber}
-          email={userInfo.data.about.contactEmail}
-        />
-      )}
-      {userInfo.data && (
-        <Services
-          skills={userInfo.data.skills.slice(0, 4)}
-          services={userInfo.data.services.slice(0, 4)}
-        />
-      )}
-      {userInfo.data && (
-        <Portfolio projects={userInfo.data.projects.slice(0, 6)} />
-      )}
-      <Video />
-      {userInfo.data && (
-        <Testimonials testimonials={userInfo.data.testimonials} />
-      )}
-      <News />
-      <Contact />
-      <Copyrights />
+      <CursorContextProvider>
+        <Header />
+        {userInfo.data && (
+          <Hero
+            title={userInfo.data.about.title}
+            subtitle={userInfo.data.about.subTitle}
+            name={userInfo.data.about.name}
+            avatar={userInfo.data.about.avatar.url}
+            skills={userInfo.data.skills.slice(0, 4)}
+            socialIcons={userInfo.data["social_handles"]}
+          />
+        )}
+        {userInfo.data && (
+          <About
+            avatar={
+              userInfo.data.about.alternateAvatars[0].url ||
+              userInfo.data.about.avatar.url
+            }
+            address={userInfo.data.about.address}
+            description={userInfo.data.about.description}
+            title={userInfo.data.about.title}
+            experience={userInfo.data.about["exp_year"]}
+            quote={userInfo.data.about.quote}
+            phone={userInfo.data.about.phoneNumber}
+            email={userInfo.data.about.contactEmail}
+          />
+        )}
+        {userInfo.data && (
+          <Services
+            skills={userInfo.data.skills.slice(0, 4)}
+            services={userInfo.data.services.slice(0, 4)}
+          />
+        )}
+        {userInfo.data && (
+          <Portfolio projects={userInfo.data.projects.slice(0, 6)} />
+        )}
+        <Video />
+        {userInfo.data && (
+          <Testimonials testimonials={userInfo.data.testimonials} />
+        )}
+        <News />
+        <Contact />
+        <Copyrights />
 
-      <div className={preloadClass}>
-        <div className={classes["loader__line"]}></div>
-      </div>
+        <div className={preloadClass}>
+          <div className={classes["loader__line"]}></div>
+        </div>
 
-      {/* <Cursor /> */}
-      {/* </CursorContextProvider> */}
+        {/* <Cursor /> */}
+      </CursorContextProvider>
     </div>
   );
 }

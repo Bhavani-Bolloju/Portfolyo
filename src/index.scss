@@ -97,14 +97,13 @@ body {
 
 .custom-cursor {
   position: fixed;
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   pointer-events: none;
   border: 2px solid var(--color-accent);
   transform: translate(-50%, -50%);
   z-index: 9999999;
-  transition: all 0.5s;
 
   .dot {
     position: absolute;
@@ -122,7 +121,7 @@ body {
   &.active {
     border: none;
     .dot {
-      transform: translate(-50%, -50%) scale(2);
+      transform: translate(-50%, -50%) scale(2.5);
       opacity: 0.5;
     }
   }
