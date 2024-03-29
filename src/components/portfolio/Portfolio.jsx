@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 
 import thumbs from "../../assets/img/thumbs/1-1.jpg";
 import thumbs2 from "../../assets/img/thumbs/4-2.jpg";
@@ -13,38 +13,7 @@ import twitter from "../../assets/img/svg/social/twitter.svg";
 import dribble from "../../assets/img/svg/social/dribble.svg";
 import tiktok from "../../assets/img/svg/social/tik-tok.svg";
 import classes from "./Portfolio.module.scss";
-import { cursorContext } from "../cntx/cursorcontext";
-
-const ProjectItem = function ({ onOpen, imageUrl, title }) {
-  const { handleCursor } = useContext(cursorContext);
-
-  return (
-    <li
-      onClick={onOpen}
-      className={classes["project__item"]}
-      data-wow-duration="1.5s"
-      onMouseEnter={handleCursor}
-      onMouseLeave={handleCursor}
-    >
-      <div className={classes["project__item-inner"]}>
-        <div className={classes["project__item-image"]}>
-          <img src={thumbs} alt="thumbnail" />
-          <div
-            className={classes["project__item-main"]}
-            data-img-url="img/portfolio/1.jpg"
-          >
-            <img src={imageUrl} alt="" />
-          </div>
-        </div>
-        <div className={classes["project__item-overlay"]}></div>
-        <div className={classes["project__item-details"]}>
-          <h3>{title}</h3>
-          {/* <span>Vimeo</span> */}
-        </div>
-      </div>
-    </li>
-  );
-};
+import ProjectItem from "./ProjectItem";
 
 function Portfolio({ projects }) {
   const [isopen, setIsopen] = useState(false);
@@ -63,120 +32,6 @@ function Portfolio({ projects }) {
           </div>
           <div className={classes["project__list"]}>
             <ul className={classes["gallery_zoom"]}>
-              {/* <li
-                onClick={() => setIsopen(true)}
-                className={classes["project__item"]}
-                data-wow-duration="1.5s"
-              >
-                <div className={classes["project__item-inner"]}>
-                  <div className={classes["project__item-image"]}>
-                    <img src={thumbs} alt="thumbnail" />
-                    <div
-                      className={classes["project__item-main"]}
-                      data-img-url="img/portfolio/1.jpg"
-                    ></div>
-                  </div>
-                  <div className={classes["project__item-overlay"]}></div>
-                  <div className={classes["project__item-details"]}>
-                    <h3>Water Drops</h3>
-                    <span>Vimeo</span>
-                  </div>
-                </div>
-              </li>
-              <li className={classes["project__item"]} data-wow-duration="1.5s">
-                <div className={classes["project__item-inner"]}>
-                  <div className={classes["project__item-image"]}>
-                    <img src={thumbs} alt="thumbnail" />
-                    <div
-                      className={classes["project__item-main"]}
-                      data-img-url="img/portfolio/2.jpg"
-                    ></div>
-                  </div>
-                  <div className={classes["project__item-overlay"]}></div>
-                  <div className={classes["project__item-details"]}>
-                    <h3>Sweet Cherry</h3>
-                    <span>Youtube</span>
-                  </div>
-                  <a
-                    className={classes["project__item-link"]}
-                    href="https://www.youtube.com/watch?v=Amq-qlqbjYA"
-                  ></a>
-                </div>
-              </li>
-              <li className={classes["project__item"]} data-wow-duration="1.5s">
-                <div className={classes["project__item-inner"]}>
-                  <div className={classes["project__item-image"]}>
-                    <img src={thumbs} alt="thumbnail" />
-                    <div
-                      className={classes["project__item-main"]}
-                      data-img-url="img/portfolio/3.jpg"
-                    ></div>
-                  </div>
-                  <div className={classes["project__item-overlay"]}></div>
-                  <div className={classes["project__item-details"]}>
-                    <h3>Red Nike</h3>
-                    <span>Soundcloud</span>
-                  </div>
-                  <a
-                    className={classes["project__item-link"]}
-                    href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/252739311&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-                  ></a>
-                </div>
-              </li>
-              <li className={classes["project__item"]} data-wow-duration="1.5s">
-                <div className={classes["project__item-inner"]}>
-                  <div className={classes["project__item-image"]}>
-                    <img src={thumbs} alt="thumbnail" />
-                    <div
-                      className={classes["project__item-main"]}
-                      data-img-url="img/portfolio/4.jpg"
-                    ></div>
-                  </div>
-                  <div className={classes["project__item-overlay"]}></div>
-                  <div className={classes["project__item-details"]}>
-                    <h3>Blue Lemon</h3>
-                    <span>Detail</span>
-                  </div>
-                  <a className={classes["project__item-link"]} href="#"></a>
-                </div>
-              </li>
-              <li className={classes["project__item"]} data-wow-duration="1.5s">
-                <div className={classes["project__item-inner"]}>
-                  <div className={classes["project__item-image"]}>
-                    <img src={thumbs} alt="thumbnail" />
-                    <div
-                      className={classes["project__item-main"]}
-                      data-img-url="img/portfolio/5.jpg"
-                    ></div>
-                  </div>
-                  <div className={classes["project__item-overlay"]}></div>
-                  <div className={classes["project__item-details"]}>
-                    <h3>Pantone</h3>
-                    <span>Image</span>
-                  </div>
-                  <a
-                    className={classes["project__item-link"]}
-                    href="https://vimeo.com/312334044"
-                  ></a>
-                </div>
-              </li>
-              <li className={classes["project__item"]} data-wow-duration="1.5s">
-                <div className={classes["project__item-inner"]}>
-                  <div className={classes["project__item-image"]}>
-                    <img src={thumbs} alt="thumbnail" />
-                    <div
-                      className={classes["project__item-main"]}
-                      data-img-url="img/portfolio/6.jpg"
-                    ></div>
-                  </div>
-                  <div className={classes["project__item-overlay"]}></div>
-                  <div className={classes["project__item-details"]}>
-                    <h3>New Telephone</h3>
-                    <span>Image</span>
-                  </div>
-                  <a className={classes["project__item-link"]} href="#"></a>
-                </div>
-              </li> */}
               {projects.map((project) => (
                 <ProjectItem
                   key={project["_id"]}
@@ -349,10 +204,125 @@ function Portfolio({ projects }) {
           </svg>
         </button>
       </div>
-
-      {/* hidden information of 4th project - ends*/}
     </section>
   );
 }
 
 export default Portfolio;
+
+// {
+//   /* <li
+//                 onClick={() => setIsopen(true)}
+//                 className={classes["project__item"]}
+//                 data-wow-duration="1.5s"
+//               >
+//                 <div className={classes["project__item-inner"]}>
+//                   <div className={classes["project__item-image"]}>
+//                     <img src={thumbs} alt="thumbnail" />
+//                     <div
+//                       className={classes["project__item-main"]}
+//                       data-img-url="img/portfolio/1.jpg"
+//                     ></div>
+//                   </div>
+//                   <div className={classes["project__item-overlay"]}></div>
+//                   <div className={classes["project__item-details"]}>
+//                     <h3>Water Drops</h3>
+//                     <span>Vimeo</span>
+//                   </div>
+//                 </div>
+//               </li>
+//               <li className={classes["project__item"]} data-wow-duration="1.5s">
+//                 <div className={classes["project__item-inner"]}>
+//                   <div className={classes["project__item-image"]}>
+//                     <img src={thumbs} alt="thumbnail" />
+//                     <div
+//                       className={classes["project__item-main"]}
+//                       data-img-url="img/portfolio/2.jpg"
+//                     ></div>
+//                   </div>
+//                   <div className={classes["project__item-overlay"]}></div>
+//                   <div className={classes["project__item-details"]}>
+//                     <h3>Sweet Cherry</h3>
+//                     <span>Youtube</span>
+//                   </div>
+//                   <a
+//                     className={classes["project__item-link"]}
+//                     href="https://www.youtube.com/watch?v=Amq-qlqbjYA"
+//                   ></a>
+//                 </div>
+//               </li>
+//               <li className={classes["project__item"]} data-wow-duration="1.5s">
+//                 <div className={classes["project__item-inner"]}>
+//                   <div className={classes["project__item-image"]}>
+//                     <img src={thumbs} alt="thumbnail" />
+//                     <div
+//                       className={classes["project__item-main"]}
+//                       data-img-url="img/portfolio/3.jpg"
+//                     ></div>
+//                   </div>
+//                   <div className={classes["project__item-overlay"]}></div>
+//                   <div className={classes["project__item-details"]}>
+//                     <h3>Red Nike</h3>
+//                     <span>Soundcloud</span>
+//                   </div>
+//                   <a
+//                     className={classes["project__item-link"]}
+//                     href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/252739311&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+//                   ></a>
+//                 </div>
+//               </li>
+//               <li className={classes["project__item"]} data-wow-duration="1.5s">
+//                 <div className={classes["project__item-inner"]}>
+//                   <div className={classes["project__item-image"]}>
+//                     <img src={thumbs} alt="thumbnail" />
+//                     <div
+//                       className={classes["project__item-main"]}
+//                       data-img-url="img/portfolio/4.jpg"
+//                     ></div>
+//                   </div>
+//                   <div className={classes["project__item-overlay"]}></div>
+//                   <div className={classes["project__item-details"]}>
+//                     <h3>Blue Lemon</h3>
+//                     <span>Detail</span>
+//                   </div>
+//                   <a className={classes["project__item-link"]} href="#"></a>
+//                 </div>
+//               </li>
+//               <li className={classes["project__item"]} data-wow-duration="1.5s">
+//                 <div className={classes["project__item-inner"]}>
+//                   <div className={classes["project__item-image"]}>
+//                     <img src={thumbs} alt="thumbnail" />
+//                     <div
+//                       className={classes["project__item-main"]}
+//                       data-img-url="img/portfolio/5.jpg"
+//                     ></div>
+//                   </div>
+//                   <div className={classes["project__item-overlay"]}></div>
+//                   <div className={classes["project__item-details"]}>
+//                     <h3>Pantone</h3>
+//                     <span>Image</span>
+//                   </div>
+//                   <a
+//                     className={classes["project__item-link"]}
+//                     href="https://vimeo.com/312334044"
+//                   ></a>
+//                 </div>
+//               </li>
+//               <li className={classes["project__item"]} data-wow-duration="1.5s">
+//                 <div className={classes["project__item-inner"]}>
+//                   <div className={classes["project__item-image"]}>
+//                     <img src={thumbs} alt="thumbnail" />
+//                     <div
+//                       className={classes["project__item-main"]}
+//                       data-img-url="img/portfolio/6.jpg"
+//                     ></div>
+//                   </div>
+//                   <div className={classes["project__item-overlay"]}></div>
+//                   <div className={classes["project__item-details"]}>
+//                     <h3>New Telephone</h3>
+//                     <span>Image</span>
+//                   </div>
+//                   <a className={classes["project__item-link"]} href="#"></a>
+//                 </div>
+//               </li> */
+// }
