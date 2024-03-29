@@ -37,6 +37,7 @@ function Portfolio({ projects }) {
                   key={project["_id"]}
                   imageUrl={project.image.url}
                   title={project.title}
+                  onOpen={() => setIsopen(true)}
                 />
               ))}
             </ul>

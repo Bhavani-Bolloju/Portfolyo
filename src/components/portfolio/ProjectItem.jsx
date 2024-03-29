@@ -28,7 +28,6 @@ const ProjectItem = function ({ onOpen, imageUrl, title }) {
         <div className={classes["project__item-overlay"]}></div>
         <div className={classes["project__item-details"]}>
           <h3>{title}</h3>
-          {/* <span>Vimeo</span> */}
         </div>
       </div>
     </li>

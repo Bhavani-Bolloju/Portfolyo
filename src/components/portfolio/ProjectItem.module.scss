@@ -1,11 +1,18 @@
 .project__item {
-  margin: 0px 0px 50px 0px;
-  width: 33.3333%;
-  // float: left;
-  padding-left: 50px;
+  flex-basis: 30%;
+  // flex-wrap: nowrap;
+  flex-grow: 1;
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: 45%;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
   &-inner {
     width: 100%;
-
     position: relative;
   }
   &-image {
