@@ -14,8 +14,6 @@
 
   &__title-slider {
     position: absolute;
-    z-index: 10;
-
     width: 100%;
     margin: auto;
     top: 40%;
@@ -40,7 +38,6 @@
     height: auto;
     display: flex;
     position: relative;
-    z-index: 300;
   }
   &__left {
     width: 50%;
@@ -87,7 +84,6 @@
     background-color: #fff;
     bottom: -40px;
     right: -40px;
-    z-index: 1;
     border-radius: 100%;
     overflow: hidden;
   }
@@ -200,7 +196,6 @@
   left: 0px;
   bottom: 0px;
   right: 0px;
-  z-index: 10;
 
   text {
     font-family: "Poppins";
@@ -212,7 +207,6 @@
 
   svg {
     position: absolute;
-    z-index: 10;
     left: -90px;
     top: -90px;
     width: 400px;

@@ -36,6 +36,15 @@
   --font-weight-bold: 700;
   --font-weight-extra-bold: 800;
   --font-weight-black: 900;
+
+  //z-indexes
+
+  --z-index-header: 500; //
+  --z-index-overlay: 1000; //overlay
+  --z-index-overlay-content: 2000;
+  --z-index-custom-cursor: 5000; //
+
+  --z-index-preloader: 8000; //
 }
 
 // 01)	RYKER BASE
@@ -103,7 +112,7 @@ body {
   pointer-events: none;
   border: 2px solid var(--color-accent);
   transform: translate(-50%, -50%);
-  z-index: 9999999;
+  z-index: var(--z-index-custom-cursor);
 
   .dot {
     position: absolute;

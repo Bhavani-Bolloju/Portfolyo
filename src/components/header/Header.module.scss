@@ -3,7 +3,7 @@
   top: 0px;
   left: 0px;
   right: 0px;
-  z-index: 1;
+  z-index: var(--z-index-header);
   background-color: var(--color-gray-6);
   transition: all 0.5s;
 
@@ -75,12 +75,11 @@
       position: absolute;
       width: 100%;
       left: 0;
-      top: 80%;
+      top: 100%;
       background-color: var(--color-gray-6);
       opacity: 1;
       backdrop-filter: blur(20x);
       padding: 3rem 5rem;
-      z-index: 9999999999;
     }
   }
 

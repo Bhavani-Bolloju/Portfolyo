@@ -123,7 +123,7 @@
   width: 100vw;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: var(--z-index-preloader);
   transition: all 1s;
   transition-delay: 2s;
 
@@ -252,12 +252,4 @@
     transform: translateY(200%) scaleY(100%);
     opacity: 0;
   }
-}
-
-// button:hover .custom-cursor {
-//   background-color: pink;
-// }
-
-.app .custom-cursor {
-  border-color: orange;
 }

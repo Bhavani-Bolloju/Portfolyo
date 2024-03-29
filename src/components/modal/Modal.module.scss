@@ -8,7 +8,6 @@
     border: none;
     top: 18%;
     right: 15%;
-    z-index: 2000;
     font-size: 2rem;
     font-weight: 700;
     font-family: var(--font-header);
@@ -44,9 +43,8 @@
   background-color: black;
   height: 100vh;
   width: 100%;
-  z-index: inherit;
   height: 100vh;
-  z-index: 200;
+
   opacity: 0.8;
   backdrop-filter: blur(10px);
   transform: translate(0%, -200%);
@@ -63,7 +61,6 @@
   margin: auto;
   width: 70%;
   height: 70vh;
-  z-index: 250;
   margin-bottom: 15px;
   transition: all 0.1s ease-in;
 
@@ -71,7 +68,6 @@
     position: relative;
     max-height: 45rem;
     overflow: hidden;
-    // z-index: -1;
     border-radius: 10px;
     margin-bottom: 2.8rem;
     img {
