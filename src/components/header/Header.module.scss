@@ -19,6 +19,7 @@
     background-color: inherit;
     justify-content: space-between;
     padding: 20px 40px 20px 50px;
+    position: relative;
   }
 
   &__logo {
@@ -64,12 +65,34 @@
   &__list {
     display: flex;
     gap: 3rem;
+
+    @media screen and (max-width: 75rem) {
+      gap: 2rem;
+    }
+    @media screen and (max-width: 65rem) {
+      gap: 1rem;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 80%;
+      background-color: var(--color-gray-6);
+      opacity: 1;
+      backdrop-filter: blur(20x);
+      padding: 3rem 5rem;
+      z-index: 9999999999;
+    }
   }
 
   &__item {
     list-style: none;
     transform: translateX(20px);
 
+    @media screen and (max-width: 65rem) {
+      background-color: pink;
+      padding: 1rem;
+      background-color: var(--color-white);
+    }
     a {
       text-decoration: none;
       text-transform: capitalize;
@@ -91,6 +114,9 @@
   width: 4rem;
   height: 4rem;
   position: relative;
+  @media screen and (max-width: 75rem) {
+    margin-left: 2rem;
+  }
 
   &__button {
     width: 70%;
@@ -147,20 +173,3 @@
     opacity: 1; /* End with opacity 1 */
   }
 }
-
-// .nav__item:nth-child(1) {
-//   animation-delay: 0.1s; /* Delay for first nav item */
-// }
-
-// .nav__item:nth-child(2) {
-//   animation-delay: 0.2s; /* Delay for second nav item */
-// }
-// .nav__item:nth-child(3) {
-//   animation-delay: 0.3s; /* Delay for second nav item */
-// }
-// .nav__item:nth-child(4) {
-//   animation-delay: 0.4s; /* Delay for second nav item */
-// }
-// .nav__item:nth-child(5) {
-//   animation-delay: 0.5s; /* Delay for second nav item */
-// }
